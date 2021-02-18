@@ -2,7 +2,6 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe'
 
 import cv2 as cv
-from ROI_selection import detect_lines, get_ROI
 import numpy as np
 
 def get_grayscale(image):
@@ -27,9 +26,9 @@ def invert_area(image, x, y, w, h, display=False):
 def detect(cropped_frame, is_number = False):
     if (is_number):
         text = pytesseract.image_to_string(cropped_frame,
-                                           config ='-c tessedit_char_whitelist=0123456789 --psm 10 --oem 2')
+                                           config ='-c tessedit_char_whitelist=0123456789 --psm 1 --oem 1')
     else:
-        text = pytesseract.image_to_string(cropped_frame, config='--psm 10')        
+        text = pytesseract.image_to_string(cropped_frame, config='--psm 1')
         
     return text
 

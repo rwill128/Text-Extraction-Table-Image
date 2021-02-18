@@ -124,7 +124,7 @@ def get_ROI(image, horizontal, vertical, left_line_index, right_line_index, top_
 
 def main(argv):
     
-    default_file = '../Images/source6.png'
+    default_file = '../Images/source.png'
     filename = argv[0] if len(argv) > 0 else default_file
     
     src = cv.imread(cv.samples.findFile(filename))
